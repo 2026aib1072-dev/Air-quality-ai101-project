@@ -4,7 +4,7 @@
 **Mini Project – Indian Institute of Technology Ropar**  
 **Academic Year:** 2026–27
 
-**GitHub Repository:** [Repository Link]([https://github.com/2026aib1072-dev/Air-quality-ai101-project])
+**GitHub Repository:** [Repository Link](https://github.com/2026aib1072-dev/Air-quality-ai101-project)
 
 ---
 
