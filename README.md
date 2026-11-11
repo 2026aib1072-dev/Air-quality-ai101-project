@@ -91,10 +91,10 @@ The dataset was split using an 80:20 ratio with stratified sampling to preserve 
 Exploratory Data Analysis (EDA) is performed to understand the dataset and identify patterns in air pollution.
 
 **Basic Statistics and Class Distribution:**<br>
-<img src="90202.jpg" width="750" alt="Distribution of Safe vs Hazardous Days">
+<img src="90300.jpg" width="750" alt="Distribution of Safe vs Hazardous Days">
 
 **Pollutant Correlation Heatmap:**<br>
-<img src="90205.jpg" width="750" alt="Pollutant Correlation Heatmap">
+<img src="90301.jpg" width="750" alt="Pollutant Correlation Heatmap">
 
 **Machine Learning Algorithm**
 Logistic Regression is used as the primary classification algorithm because the target variable has two classes. The model estimates the probability of a day being hazardous based on the pollutant features.
@@ -105,7 +105,7 @@ The trained model is evaluated using the testing dataset.
 The evaluation includes classification metrics such as Accuracy, Precision, Recall, F1-score, and Log Loss.
 
 **Confusion Matrix and Final Classification Report:**<br>
-<img src="90213.jpg" width="750" alt="Confusion Matrix and Classification Report">
+<img src="90302.jpg" width="750" alt="Confusion Matrix and Classification Report">
 
 ## 10. Odds Ratio and Borderline Analysis
 
@@ -113,13 +113,16 @@ The evaluation includes classification metrics such as Accuracy, Precision, Reca
 Odds ratios are used to interpret the influence of pollutant features on the odds of hazardous classification. Since the features are standardized, these values represent the change in odds associated with a one-standard-deviation increase in the corresponding feature, holding other features constant.
 
 **Feature Importance:**<br>
-<img src="90216.jpg" width="750" alt="Feature Importance">
+<img src="90303.jpg" width="750" alt="Feature Importance">
 
 **Odds Ratios of Air Pollutants:**<br>
-<img src="90219.jpg" width="750" alt="Odds Ratios">
+<img src="90304.jpg" width="750" alt="Odds Ratios">
 
 **Borderline Analysis**
 Borderline analysis examines predictions that lie close to the model's classification boundary. It helps understand cases where the model has less certainty while distinguishing between hazardous and non-hazardous conditions.
+
+**Average Pollutant Levels on Borderline Days:**<br>
+<img src="90305.jpg" width="750" alt="Average Pollutant Levels on Borderline Days">
 
 ## 11. Model and Evaluation Results
 
@@ -132,67 +135,6 @@ The final model fit and underfitting diagnostics yielded the following results:
 | **Log Loss** | 0.1611 | 0.1486 |
 
 **Model Fit Conclusion:** Low training error achieved. Model is NOT underfitting! The recorded results indicate similar training and testing performance, suggesting that the model generalizes reasonably well to the held-out test data.
-
-## 12. Repository Structure
-
-The repository is organized into individual contribution notebooks, a merge script, and the final master pipeline.
-
-```text
-Air-quality-ai101-project/
-│
-├── README.md
-├── requirements.txt
-├── city_day.csv
-│
-├── 01_data_preprocessing_vineet_updated.ipynb
-├── 02_eda_and_modeling_rishabh.ipynb
-├── 04_Model_evaluation_and_visualizations.ipynb
-├── 5_odds_ratios_and_borderline_analysis_sandeep.ipynb
-│
-├── merge_script.ipynb
-└── air_quality_master_pipeline.ipynb
-
-## 9. Model Evaluation and Visualizations
-
-The trained model is evaluated using the testing dataset.
-The evaluation includes the following classification metrics: Accuracy, Precision, Recall, F1-score, Log Loss, and a Confusion Matrix. 
-
-![Confusion Matrix and Classification Report](90213.jpg)
-
-## 10. Odds Ratio and Borderline Analysis
-
-**Feature Importance & Odds Ratio Analysis**
-Odds ratios are used to interpret the influence of pollutant features on the odds of hazardous classification. 
-
-![Feature Importance Summary](90216.jpg)
-
-Since the features are standardized, these values represent the change in odds associated with a one-standard-deviation increase in the corresponding feature, holding other features constant.
-
-![Odds Ratios of Air Pollutants](90219.jpg)
-
-Some key recorded odds ratios include:
-| Feature | Odds Ratio |
-| :--- | :--- |
-| PM2.5 | 73.5339 |
-| CO | 22.0709 |
-| PM10 | 2.6723 |
-| SO2 | 1.3147 |
-| NOx | 1.2826 |
-
-**Borderline Analysis**
-Borderline analysis examines predictions that lie close to the model's classification boundary. It helps understand cases where the model has less certainty while distinguishing between hazardous and non-hazardous conditions.
-
-## 11. Model and Evaluation Results
-
-The model fit and underfitting diagnostics yielded the following final results:
-
-| Evaluation Metric | Training | Testing |
-| :--- | :--- | :--- |
-| **Accuracy** | 94.36% | 94.45% |
-| **F1-score** | 0.8871 | 0.8888 |
-| **Log Loss** | 0.1611 | 0.1486 |
-
-**Model Fit Conclusion:** Low training error achieved. The model is NOT underfitting! The recorded results indicate nearly identical training and testing performance, suggesting that the model generalizes exceptionally well to the held-out test data.
 
 ## 12. Repository Structure
 
