@@ -1,73 +1,57 @@
-# AQI Hazardous Prediction
-### Air Quality Prediction & Hazardous Day Classification
-
-**Mini Project – Indian Institute of Technology Ropar**  
-**Academic Year:** 2026–27
-
-**GitHub Repository:** [Air-quality-ai101-project](https://github.com/2026aib1072-dev/Air-quality-ai101-project)
-
----
+# 🌫️ AQI Hazardous Prediction Using Machine Learning
 
 ## 1. Project Overview
 
-This project develops a Machine Learning-based system to classify potentially hazardous air quality conditions using historical Air Quality Index (AQI) data.
+This project focuses on predicting hazardous air quality conditions using Machine Learning.
 
-The project uses pollutant-related features to classify air quality into two categories:
+It uses historical air quality data from Indian cities and applies Data Preprocessing, Exploratory Data Analysis (EDA), Feature Scaling, Logistic Regression, and Model Evaluation to classify air quality into two categories:
 
-- **0 – Non-Hazardous:** AQI ≤ 200
-- **1 – Hazardous:** AQI > 200
+- **Non-Hazardous (0):** AQI ≤ 200
+- **Hazardous (1):** AQI > 200
 
-The objective is to understand how machine learning can be used to analyse air pollution data and identify potentially hazardous air quality days.
+The AQI threshold of 200 is selected for this project.
 
-**Note:** AQI > 200 is the threshold selected for this project.
+## 2. Problem Statement
 
-## 2. Problem Statement and Motivation
+Air pollution is a major environmental concern in India. High concentrations of pollutants such as PM2.5, PM10, CO, and SO2 can negatively affect human health.
 
-Air pollution is a major environmental concern that affects human health and the environment.
-
-Identifying days with potentially hazardous air quality can help in understanding pollution patterns and assessing environmental conditions.
-
-The objective of this project is to develop and evaluate a binary classification model using historical air quality measurements and pollutant concentrations.
+The objective of this project is to develop a Machine Learning classification model that predicts whether air quality is hazardous based on pollutant concentration data.
 
 ## 3. Dataset Description
 
-- **Dataset Name:** City Day AQI Dataset
-- **File Used:** `city_day.csv`
-- **Source:** Kaggle
-- **Dataset Link:** [Air Quality Data in India – Kaggle](https://www.kaggle.com/datasets/rohanrao/air-quality-data-in-india)
+- **Dataset:** Air Quality Data in India
+- **Dataset File:** `city_day.csv`
+- **Source:** Kaggle – Air Quality Data in India
 
-The dataset contains historical city-wise air quality measurements and pollutant information.
+The dataset contains historical air quality measurements from different Indian cities.
 
-It includes parameters such as:
+### Features Used
 
-- PM2.5
-- PM10
-- NO
-- NO2
-- NOx
-- NH3
-- CO
-- SO2
-- O3
-- AQI
+The model uses the following 12 pollutant-related features:
 
-The original dataset contains 29,531 rows and 16 columns.
+1. PM2.5
+2. PM10
+3. NO
+4. NO2
+5. NOx
+6. NH3
+7. CO
+8. SO2
+9. O3
+10. Benzene
+11. Toluene
+12. Xylene
 
-## 4. Technologies and Libraries Used
+### Target Variable
 
-The project uses the following technologies and Python libraries:
+`Is_Hazardous`
 
-- Python
-- Pandas
-- NumPy
-- Scikit-learn
-- Matplotlib
-- Seaborn
-- Jupyter Notebook / Google Colab
+- `0` – Non-Hazardous
+- `1` – Hazardous
 
-## 5. Software and Library Versions
+## 4. Technologies and Libraries
 
-| Software / Library | Version |
+| Technology | Version |
 |---|---|
 | Python | 3.13.18 |
 | Pandas | 2.2.3 |
@@ -76,73 +60,35 @@ The project uses the following technologies and Python libraries:
 | Matplotlib | 3.10.0 |
 | Seaborn | 0.13.2 |
 
-## 6. Project Workflow
+Other tools: Jupyter Notebook and Git/GitHub.
 
-The project is divided into the following stages:
+## 5. Project Workflow
 
-1. Data loading and cleaning
-2. Exploratory Data Analysis (EDA)
-3. AQI-based binary target creation
-4. Feature selection and preparation
-5. Train-test splitting
-6. Missing-value handling through median imputation
-7. Feature scaling
-8. Logistic Regression model training
-9. Model evaluation and visualization
-10. Odds ratio analysis
-11. Borderline prediction analysis
+1. **Data Loading:** Loading the air quality dataset.
+2. **Data Cleaning:** Handling missing values and preparing the dataset.
+3. **Target Creation:** Creating the binary `Is_Hazardous` variable using the AQI threshold.
+4. **Exploratory Data Analysis:** Studying pollutant distributions and relationships through visualizations.
+5. **Train-Test Split:** Splitting the dataset into training and testing sets using stratified sampling (80:20).
+6. **Feature Scaling:** Standardizing pollutant features using StandardScaler.
+7. **Model Training:** Training a Logistic Regression classifier.
+8. **Model Evaluation:** Evaluating the model using classification metrics and visualizations.
+9. **Odds Ratio Analysis:** Understanding the influence of pollutant features.
+10. **Borderline Analysis:** Examining predictions around the classification boundary.
 
-## 7. Data Preprocessing
+## 6. Machine Learning Model
 
-**Implemented by:** Vineet Shekhar  
-**GitHub Username:** `vin-it-1501`
+The project uses **Logistic Regression**, a supervised Machine Learning algorithm for binary classification.
 
-The preprocessing stage includes:
+### Data Preprocessing
 
-1. Loading the dataset using Pandas.
-2. Removing rows with missing AQI or AQI category values.
-3. Creating a binary target variable named `Is_Hazardous`.
-4. Removing unnecessary columns such as City, Date, AQI and AQI_Bucket from the input features.
-5. Splitting the dataset into 80% training data and 20% testing data.
-6. Using stratified sampling to maintain class proportions in both sets.
-7. Handling missing feature values using median imputation calculated from training data only.
+- Missing values are handled using median imputation.
+- The dataset is divided into training and testing sets in an 80:20 ratio.
+- Stratified sampling preserves the class distribution.
+- StandardScaler is fitted on training data and then applied to testing data to prevent data leakage.
 
-**Notebook:** `01_data_preprocessing_vineet_updated.ipynb`
+### Model Evaluation Metrics
 
-## 8. Exploratory Data Analysis and Model Development
-
-**Implemented by:** Rishabh Vishnoi  
-**GitHub Username:** `2026aib1072-dev`
-
-This stage focuses on understanding the dataset and developing the initial machine learning pipeline.
-
-The work includes:
-
-1. Exploratory Data Analysis.
-2. Descriptive statistical analysis.
-3. Visualizing target class distribution.
-4. Analysing relationships between pollutant features using correlation.
-5. Preparing data for model development.
-6. Initial model development and related analysis.
-
-**Notebook:** `02_eda_and_modeling_rishabh.ipynb`
-
-## 9. Model Evaluation and Visualizations
-
-**Implemented by:** Divya Godara  
-**GitHub Username:** `Divyaa73`
-
-This stage focuses on evaluating model performance and presenting the results through visualizations.
-
-The work includes:
-
-1. Feature scaling using StandardScaler.
-2. Model evaluation on training and testing data.
-3. Calculation of classification performance metrics.
-4. Generating confusion matrix and classification reports.
-5. Visualizing important model evaluation results.
-
-The evaluation metrics include:
+The model is evaluated using:
 
 - Accuracy
 - Precision
@@ -151,47 +97,102 @@ The evaluation metrics include:
 - Log Loss
 - Confusion Matrix
 
-**Notebook:** `04_Model_evaluation_and_visualizations.ipynb`
+## 7. Model Performance
 
-## 10. Odds Ratio and Borderline Analysis
+The following results were recorded during project development:
 
-**Implemented by:** Sandeep Kumar  
-**GitHub Username:** `Sandeepkumar2008`
+| Metric | Training | Testing |
+|---|---:|---:|
+| Accuracy | 94.36% | 94.45% |
+| F1-score | 0.8871 | 0.8888 |
+| Log Loss | 0.1611 | 0.1486 |
 
-This stage focuses on interpreting model behaviour and understanding predictions.
+*These values should be verified against the final executed notebook before submission.*
 
-The work includes:
+## 8. Odds Ratio Analysis
 
-1. Calculating odds ratios from Logistic Regression coefficients.
-2. Analysing the influence of different pollutant features.
-3. Identifying borderline predictions using predicted probabilities.
-4. Studying observations with hazardous prediction probabilities between 40% and 60%.
-5. Visualizing pollutant patterns in borderline cases.
+Odds ratios help interpret the influence of different pollutant features on hazardous classification.
 
-**Notebook:** `5_odds_ratios_and_borderline_analysis_sandeep.ipynb`
+Some recorded odds ratios are:
 
-## 11. Model and Evaluation Results
-
-The project uses **Logistic Regression** for binary classification.
-
-The model is trained using the training dataset and evaluated using the testing dataset.
-
-Recorded evaluation results:
-
-| Metric | Result |
+| Feature | Odds Ratio |
 |---|---:|
-| Training Accuracy | 94.36% |
-| Testing Accuracy | 94.45% |
-| Training F1-score | 0.8871 |
-| Testing F1-score | 0.8888 |
-| Training Log Loss | 0.1611 |
-| Testing Log Loss | 0.1486 |
+| PM2.5 | 73.5339 |
+| CO | 22.0709 |
+| PM10 | 2.6723 |
+| SO2 | 1.3147 |
+| NOx | 1.2826 |
 
-The close training and testing performance indicates consistent results on the two datasets.
+Since the features are standardized, these values represent the change in odds associated with a one-standard-deviation increase in the corresponding feature, holding other features constant.
 
-The confusion matrix, classification report, odds ratios and borderline analysis provide additional insight into model performance and prediction behaviour.
+## 9. Team Contributions
 
-## 12. Repository Structure
+| Team Member | Contribution |
+|---|---|
+| Vineet Shekhar (`vin-it-1501`) | Data Loading, Cleaning, Stratified Train-Test Split and Documentation |
+| Rishabh Vishnoi (`2026aib1072-dev`) | Exploratory Data Analysis and Initial Model Development |
+| Divya Godara (`Divyaa73`) | Model Evaluation and Visualizations |
+| Sandeep Kumar (`Sandeepkumar2008`) | Odds Ratio and Borderline Analysis |
+
+## 10. Installation and Execution
+
+Follow these steps to clone the repository, install dependencies, and execute the master pipeline.
+
+### Step 1. Clone the repository from GitHub
+
+<text>Time: Approximately 10 seconds</text>
+
+**PowerShell:**
+
+```powershell
+git clone https://github.com/2026aib1072-dev/Air-quality-ai101-project.git
+```
+
+### Step 2. Navigate into the project directory
+
+<text>Time: Approximately 5 seconds</text>
+
+**PowerShell:**
+
+```powershell
+cd Air-quality-ai101-project
+```
+
+### Step 3. Pull latest changes from main branch
+
+<text>Time: Approximately 10 seconds</text>
+
+**PowerShell:**
+
+```powershell
+git pull origin main
+```
+
+### Step 4. Install all dependencies from requirements.txt
+
+<text>Time: Approximately 30 seconds</text>
+
+**PowerShell:**
+
+```powershell
+python -m pip install -r requirements.txt
+```
+
+### Step 5. Execute the master pipeline headlessly
+
+<text>Time: Approximately 1 minute</text>
+
+**PowerShell:**
+
+```powershell
+python -m nbconvert --to notebook --execute air_quality_master_pipeline.ipynb
+```
+
+This command executes the master notebook from top to bottom without requiring manual interaction with the Jupyter interface.
+
+**Note:** Execution time may vary depending on system specifications and internet speed. Python 3.13 is recommended for the listed library versions.
+
+## 11. Project Structure
 
 ```text
 Air-quality-ai101-project/
@@ -205,82 +206,22 @@ Air-quality-ai101-project/
 ├── 04_Model_evaluation_and_visualizations.ipynb
 ├── 5_odds_ratios_and_borderline_analysis_sandeep.ipynb
 │
-├── air_quality_master_pipeline.ipynb
 ├── merge_script.ipynb
-│
-├── Mini_Project_Presentation.pdf
-└── video_link.txt
+└── air_quality_master_pipeline.ipynb
 ```
 
-*The presentation PDF and video link files should be added to the repository before final submission.*
+## 12. Project Demonstration
 
-## 13. Installation and Execution
+**Video Demonstration:** Add the YouTube video link after uploading the final project presentation.
 
-### Step 1: Clone the repository
+## 13. Conclusion
 
-```bash
-git clone https://github.com/2026aib1072-dev/Air-quality-ai101-project.git
-```
+This project demonstrates the application of Machine Learning techniques to classify hazardous air quality conditions using pollutant concentration data.
 
-### Step 2: Navigate to the project directory
+It combines data preprocessing, exploratory analysis, Logistic Regression, model evaluation, and odds ratio interpretation to study the relationship between air pollutants and hazardous air quality.
 
-```bash
-cd Air-quality-ai101-project
-```
+## 14. Project Information
 
-### Step 3: Install required libraries
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 4: Launch Jupyter Notebook
-
-```bash
-jupyter notebook
-```
-
-### Step 5: Run the project
-
-Open `air_quality_master_pipeline.ipynb` to view the integrated project workflow.
-
-The individual notebooks are also available for understanding the contributions of each team member.
-
-Run the notebook cells sequentially from top to bottom.
-
-## 14. Team Members and Contributions
-
-| S. No. | Name | GitHub Username | Contribution |
-|---|---|---|---|
-| 1 | Vineet Shekhar | `vin-it-1501` | Data Loading, Cleaning, Stratified Split and Documentation |
-| 2 | Rishabh Vishnoi | `2026aib1072-dev` | Exploratory Data Analysis and Initial Model Development |
-| 3 | Sandeep Kumar | `Sandeepkumar2008` | Odds Ratio and Borderline Analysis |
-| 4 | Divya Godara | `Divyaa73` | Model Evaluation and Visualizations |
-
-## 15. Project Presentation and Video Demonstration
-
-**Presentation:** `Mini_Project_Presentation.pdf`
-
-**Project Video:** [YouTube Video Link – To Be Added]
-
-The project demonstration covers:
-
-- Team member introductions and contributions
-- Problem statement and motivation
-- Dataset description
-- Data preprocessing and exploratory analysis
-- Training and testing data split
-- Machine learning model development
-- Model evaluation and visualizations
-- Interpretation of results
-- Odds ratio and borderline analysis
-
-## 16. Project Status
-
-The project implementation has been completed, including data preprocessing, exploratory data analysis, model development, evaluation, visualization, odds ratio analysis and borderline prediction analysis.
-
-The integrated master pipeline and individual notebooks are included in the repository.
-
----
-
-**Developed as an AI101 Mini Project at Indian Institute of Technology Ropar.**
+- **Course:** AI101
+- **Project Title:** AQI Hazardous Prediction Using Machine Learning
+- **GitHub Repository:** https://github.com/2026aib1072-dev/Air-quality-ai101-project
