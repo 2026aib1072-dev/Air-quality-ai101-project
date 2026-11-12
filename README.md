@@ -176,7 +176,7 @@ Found 174 borderline days on the edge of hazardous classification.
 
 | Deliverable | Link |
 | :--- | :--- |
-| 📄 **Presentation (5 slides)** | [`<Presentation>.pdf`](./) *(in this repository)* |
+| 📄 **Presentation (5 slides)** | [`<ppt_AQI_Hazardous>.pdf`](./) *(in this repository)* |
 | 🎥 **Video demonstration (≤ 5:00)** | [▶ Watch on YouTube](ADD_YOUR_YOUTUBE_LINK_HERE) |
 
 **What the video covers** (following the course's suggested 5-minute plan):
