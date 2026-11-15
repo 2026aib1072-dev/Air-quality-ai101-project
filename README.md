@@ -176,7 +176,7 @@ Found 174 borderline days on the edge of hazardous classification.
 
 | Deliverable | Link |
 | :--- | :--- |
-| 📄 **Presentation (5 slides)** | [`<ppt_AQI_Hazardous>.pdf`](./) *(in this repository)* |
+| 📄 **Presentation (5 slides)** | [`AQI_HAZARDOUS_PREDICTION_FINALL.pdf`](./) *(in this repository)* |
 | 🎥 **Video demonstration (≤ 5:00)** | [▶ Watch on YouTube](ADD_YOUR_YOUTUBE_LINK_HERE) |
 
 **What the video covers** (following the course's suggested 5-minute plan):
@@ -195,8 +195,8 @@ Found 174 borderline days on the edge of hazardous classification.
 
 | Tool | Used for | How we checked it |
 | :--- | :--- | :--- |
-| **ChatGPT** | Explaining ML concepts, code troubleshooting, first drafts of documentation | Ran and tested every code change; reviewed all text against our own results |
-| **Claude** | Restructuring and polishing this README and drafting `requirements.txt` | Compared every number in the README with the notebook outputs; commands tested on a fresh clone |
+| **ChatGPT** | explaining ML concepts and code troubleshooting |
+| **Claude** | polishing the README, helping draft  `requirements.txt` |  
 
 - No AI was used to generate the dataset or the results; all numbers come from running our notebooks on `city_day.csv`.
 - The code, model execution, interpretation and final verification are the team's responsibility, and every member can explain any part of the project.
