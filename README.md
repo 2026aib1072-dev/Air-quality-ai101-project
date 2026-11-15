@@ -177,7 +177,7 @@ Found 174 borderline days on the edge of hazardous classification.
 | Deliverable | Link |
 | :--- | :--- |
 | 📄 **Presentation (5 slides)** | [`ppt_AQI_Hazardous.pdf`](./) *(in this repository)* |
-| 🎥 **Video demonstration (≤ 5:00)** | [▶ Watch the Video][https://drive.google.com/file/d/1H-Dx_2PozW_ELT7NDHmWtXWFEtVzyJVq/view?usp=sharing]) |
+| 🎥 **Video demonstration (≤ 5:00)** | [▶ Watch the Video](https://drive.google.com/file/d/1H-Dx_2PozW_ELT7NDHmWtXWFEtVzyJVq/view?usp=sharing) |
 
 **What the video covers** (following the course's suggested 5-minute plan):
 
@@ -193,8 +193,8 @@ Found 174 borderline days on the edge of hazardous classification.
 
 ## 7. AI-Use Disclosure
 
-| Tool | Used for | How we checked it |
-| :--- | :--- | :--- |
+| Tool | Used for | 
+| :--- | :--- | 
 | **ChatGPT** | explaining ML concepts and code troubleshooting |
 | **Claude** | polishing the README, helping draft  `requirements.txt` |  
 
